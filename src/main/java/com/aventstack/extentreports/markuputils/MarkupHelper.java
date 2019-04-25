@@ -26,5 +26,12 @@ public class MarkupHelper {
         t.setData(data);
         return t;
     }
+
+    public static Markup createLink(String name, String href ) {
+        Link l = new Link();
+        l.setHref(href);
+        l.setText(name);
+        return l;
+    }
     
 }

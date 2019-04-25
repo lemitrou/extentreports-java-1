@@ -4,7 +4,7 @@
 
 	<groupId>com.aventstack</groupId>
 	<artifactId>extentreports</artifactId>
-	<version>4.0.10-SNAPSHOT</version>
+	<version>4.0.99</version>
 
 	<name>extentreports</name>
 	<url>www.extentreports.com</url>
@@ -39,6 +39,19 @@
 		<mongodb.version>3.3.0</mongodb.version>
 		<apache.httpcomponents.version>4.5.2</apache.httpcomponents.version>
 	</properties>
+
+	<distributionManagement>
+		<repository>
+			<id>aws-release</id>
+			<name>AWS Release Repository</name>
+			<url>s3://workable-private-repo/release</url>
+		</repository>
+		<snapshotRepository>
+			<id>aws-snapshot</id>
+			<name>AWS Snapshot Repository</name>
+			<url>s3://workable-private-repo/snapshot</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<dependencies>
 		<dependency>
@@ -114,17 +127,24 @@
 				<version>2.7</version>
 			</plugin>
 		</plugins>
+		<extensions>
+			<extension>
+				<groupId>org.springframework.build</groupId>
+				<artifactId>aws-maven</artifactId>
+				<version>5.0.0.RELEASE</version>
+			</extension>
+		</extensions>
 	</build>
 
-	<distributionManagement>
-		<snapshotRepository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-		</repository>
-	</distributionManagement>
+<!--	<distributionManagement>-->
+<!--		<snapshotRepository>-->
+<!--			<id>ossrh</id>-->
+<!--			<url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+<!--		</snapshotRepository>-->
+<!--		<repository>-->
+<!--			<id>ossrh</id>-->
+<!--			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>-->
+<!--		</repository>-->
+<!--	</distributionManagement>-->
 
 </project>
