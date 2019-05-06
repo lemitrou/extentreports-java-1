@@ -18,7 +18,7 @@ class Link implements Markup {
     public String getHref() { return href; }
 
     public String getMarkup() {
-        String lhs = "<a href=\"" + href + "\">"+ text + "</href>";
+        String lhs = "<a href=\"" + href + "\" target=\"_blank\">"+ text + "</href>";
         
         return lhs;
     }
