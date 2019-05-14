@@ -71,8 +71,8 @@
 	<#macro recurse_nodes nodeList>
 	<#list nodeList as node>
 	<#assign leaf=(node.hasChildren())?then('','leaf')>
-	<li class='node level-${ node.level } ${ leaf } ${ node.status }' status='${ node.status }' test-id='${ node.getID() }'>
-		<div class='collapsible-header'>
+	<li class='node level-${ node.level } ${ leaf } ${ node.status } active' status='${ node.status }' test-id='${ node.getID() }'>
+		<div class='collapsible-header active'>
 			<div class='node-name'>${ node.name }</div>
 			<span class='node-time'>${ node.startTime?datetime?string["${timeStampFormat}"] }</span>
 			&middot; <span class='node-duration'>${ node.runDuration }</span>
@@ -90,7 +90,7 @@
 		<#assign displayContent=false>
 		</#if>
 		<#if node.hasLog() && displayContent>
-		<div class='collapsible-body'>
+		<div class='collapsible-body' style="display: block">
 			<#if node.hasLog()>
 			<#if node.description?? && node.description?has_content>
 			<div class='node-desc'>${ node.description}</div>
