@@ -86,9 +86,9 @@
 			</#if>						
 		</div>
 		<#assign displayContent=true>
-		<#if node.getStatus()=='pass' && disableToggleActionForPassedNode=='true'>
-		<#assign displayContent=false>
-		</#if>
+<#--		<#if node.getStatus()=='pass' && disableToggleActionForPassedNode=='true'>-->
+<#--		<#assign displayContent=false>-->
+<#--		</#if>-->
 		<#if node.hasLog() && displayContent>
 		<div class='collapsible-body' style="display: block">
 			<#if node.hasLog()>
